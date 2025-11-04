@@ -26,14 +26,14 @@ io.on("connection", (socket) => {
 
     socket.emit(
       "message",
-      formatMsg("Masai server", "welcome to masai server")
+      formatMsg("Mayank's Chat App", "welcome to Mayank's Chat App")
     );
 
     socket.broadcast
       .to(user.room)
       .emit(
         "message",
-        formatMsg("Masai server", `${username} has joined the chat`)
+        formatMsg("Mayank's Chat App", `${username} has joined the chat`)
       );
 
     io.to(user.room).emit("roomUsers", {
@@ -55,7 +55,7 @@ io.on("connection", (socket) => {
       .to(user.room)
       .emit(
         "message",
-        formatMsg("Masai server", `${user.username} has left the chat`)
+        formatMsg("Mayank's Chat App", `${user.username} has left the chat`)
       );
 
     io.to(user.room).emit("roomUsers", {
